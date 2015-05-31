@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Testpages by cheoAlejo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Testpages</h1>
+      <h2 class="project-tagline">Testing pages in github pages</h2>
+      <a href="https://github.com/cheoAlejo/testpages" class="btn">View on GitHub</a>
+      <a href="https://github.com/cheoAlejo/testpages/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/cheoAlejo/testpages/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <hr>
+
+<h1>
+<a id="-git-resumen-de-comandos" class="anchor" href="#-git-resumen-de-comandos" aria-hidden="true"><span class="octicon octicon-link"></span></a> GIT, RESUMEN DE COMANDOS</h1>
+
+<h2>
+<a id="recuerde-el-flujo-de-trabajo" class="anchor" href="#recuerde-el-flujo-de-trabajo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recuerde el flujo de trabajo</h2>
+
+<p><img src="http://www.delfineco.com/gitman/img/resumenflujo.svg" alt="Resumen flujo"></p>
+
+<h3>
+<a id="iniciar-repo" class="anchor" href="#iniciar-repo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Iniciar repo</h3>
+
+<pre><code>git init
+</code></pre>
+
+<h3>
+<a id="guardando-commits" class="anchor" href="#guardando-commits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Guardando commits</h3>
+
+<p>Ver estado del repo</p>
+
+<pre><code>git status
+</code></pre>
+
+<p>Agregar al index</p>
+
+<pre><code>// Solo un archivo
+git add &lt;archivo&gt; 
+
+// O todo lo modificado
+git add -A
+</code></pre>
+
+<p>Quitar del index</p>
+
+<pre><code>// Solo un archivo
+git reset &lt;archivo&gt;
+
+// O todo lo agregado
+git reset
+</code></pre>
+
+<p>Guardar commit</p>
+
+<pre><code>git commit
+</code></pre>
+
+<p>Modificar último commit</p>
+
+<pre><code>git commit --amend
+</code></pre>
+
+<h3>
+<a id="ver-diferencias" class="anchor" href="#ver-diferencias" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ver diferencias</h3>
+
+<p>Ver diferencias entre el directorio de trabajo y el ultimo commit</p>
+
+<pre><code>git diff
+git difftool
+git vimdiff
+</code></pre>
+
+<p>Para un solo archivo</p>
+
+<pre><code>git diff &lt;archivo&gt;
+git difftool &lt;archivo&gt;
+git vimdiff &lt;archivo&gt;
+</code></pre>
+
+<h3>
+<a id="ver-historial" class="anchor" href="#ver-historial" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ver historial</h3>
+
+<p>Ver todo el historial</p>
+
+<pre><code>git log
+</code></pre>
+
+<p>Ver solo la primera linea de cada commit</p>
+
+<pre><code>git log --oneline
+</code></pre>
+
+<p>Listar los archivos modificados en cada commit</p>
+
+<pre><code>git log --stat
+</code></pre>
+
+<p>Ver solo unos cuantos ultimos commits. Reemplazar <code>&lt;n&gt;</code> por el número de commits que se quieren ver.</p>
+
+<pre><code>git log -&lt;n&gt;
+</code></pre>
+
+<p>Ver historial solo para un archivo</p>
+
+<pre><code>git log &lt;archivo&gt;
+</code></pre>
+
+<h3>
+<a id="viajando-al-pasado" class="anchor" href="#viajando-al-pasado" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viajando al pasado</h3>
+
+<p>Viajar en el pasado a un commit antiguo</p>
+
+<pre><code>git checkout &lt;commit&gt;
+</code></pre>
+
+<p>Volver al presente</p>
+
+<pre><code>git checkout master
+</code></pre>
+
+<h3>
+<a id="eliminando-cambios" class="anchor" href="#eliminando-cambios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Eliminando cambios</h3>
+
+<p>Descartar todos los cambios hechos en el directorio de trabajo actual:</p>
+
+<pre><code>git reset --hard
+</code></pre>
+
+<p>Descartar todos los cambios hechos de un commit hacia adelante</p>
+
+<pre><code>git reset --hard &lt;commit&gt;
+</code></pre>
+
+<blockquote>
+<p><strong>CUIDAD CON ESTE COMANDO !</strong></p>
+</blockquote>
+
+<h3>
+<a id="ramas" class="anchor" href="#ramas" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ramas</h3>
+
+<p>Crear rama basada en la rama actual donde estoy ubicado</p>
+
+<pre><code>git branch &lt;nuevaRama&gt;
+</code></pre>
+
+<p>Cambiarse entre ramas</p>
+
+<pre><code>git checkout &lt;rama&gt;
+</code></pre>
+
+<p>Borrar rama</p>
+
+<pre><code>git branch -d &lt;rama&gt;
+</code></pre>
+
+<p>Fusionar en <code>master</code> otra rama que tiene un solo commit:</p>
+
+<pre><code>git merge &lt;rama&gt;
+</code></pre>
+
+<p>Fusionar en <code>master</code> otra rama que tiene varios commit:</p>
+
+<pre><code>git merge --no-ff &lt;rama&gt;
+</code></pre>
+
+<h3>
+<a id="sincronizando-con-repo-central" class="anchor" href="#sincronizando-con-repo-central" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sincronizando con repo central</h3>
+
+<p>Clonar repo central</p>
+
+<pre><code>git clone &lt;URLRepoCentral&gt;
+</code></pre>
+
+<p>Listar conexiones remotas</p>
+
+<pre><code>git remote -v
+</code></pre>
+
+<p>Traer informacion central pero sin modificar el repo local</p>
+
+<pre><code>git fetch
+</code></pre>
+
+<p>Ver todas las ramas remotas</p>
+
+<pre><code>git branch -a
+</code></pre>
+
+<p>Bajar y fusionar el repo central con el repo local</p>
+
+<pre><code>git pull --rebase
+</code></pre>
+
+<p>Subir cambios locales al repo central</p>
+
+<pre><code>git push
+</code></pre>
+
+<p>Subir los tags</p>
+
+<pre><code>git push --tags
+</code></pre>
+
+<p>Ver quién las cagó</p>
+
+<pre><code>git blame &lt;archivo&gt;
+</code></pre>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/cheoAlejo/testpages">Testpages</a> is maintained by <a href="https://github.com/cheoAlejo">cheoAlejo</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
